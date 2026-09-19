@@ -1,17 +1,66 @@
-# flutter_application_1
+# PRG Mobile
 
-A new Flutter project.
+Aplicativo institucional desenvolvido pela Asimov Jr. para a PRG/UNIFEI.
 
-## Getting Started
+## Requisitos
 
-This project is a starting point for a Flutter application.
+- Flutter 3.41.7 (canal `stable`)
+- Dart 3.11.5 (incluso no Flutter)
+- SDK Dart exigido pelo projeto: `^3.11.5` (ver `pubspec.yaml`)
+- Android Studio e/ou Xcode para emuladores
 
-A few resources to get you started if this is your first Flutter project:
+Versão do app: `1.0.0+1`
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Rodando o projeto
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+flutter run
+```
+
+## Qualidade
+
+```bash
+dart format .
+flutter analyze
+flutter test
+```
+
+Os mesmos comandos rodam no CI (`.github/workflows/ci.yml`).
+
+## Workflow
+
+1. Pegue uma task no Jira
+2. Crie uma branch a partir da `main`
+3. Desenvolva
+4. Abra um Draft PR se a tarefa for longa
+5. Finalize a implementação
+6. Solicite review
+7. Merge após aprovação e CI
+
+## Branches
+
+```text
+feature/PRG-23-cardapio
+fix/PRG-31-home-overflow
+refactor/PRG-42-navigation
+```
+
+## Estrutura
+
+```text
+lib/
+├── ui/          # telas, view models e widgets, por feature
+├── data/        # models, repositories e services
+├── config/      # configurações e inicializações
+├── routing/     # rotas e navegação
+├── utils/       # helpers genéricos
+└── main.dart
+```
+
+Detalhes em [docs/architecture.md](docs/architecture.md).
+
+## Documentação
+
+- [Arquitetura](docs/architecture.md)
+- [Guia de desenvolvimento](docs/development.md)

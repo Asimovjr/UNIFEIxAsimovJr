@@ -1,36 +1,19 @@
-# Pull Request
+## O que foi feito?
 
-> Placeholder — preencher conforme o padrão do time.
+Descreva brevemente as alterações.
 
-## Descrição
+## Como testar?
 
-<!-- O que este PR faz e por quê. -->
+Explique os passos necessários para validar a implementação.
 
-## Tipo de mudança
+## Task
 
-- [ ] Nova feature
-- [ ] Correção de bug
-- [ ] Refatoração
-- [ ] Documentação
-- [ ] Configuração / infra
-
-## Issue relacionada
-
-<!-- Ex.: Closes #123 -->
-
-## Como testar
-
-1. <!-- passo 1 -->
-2. <!-- passo 2 -->
+Jira: PRG-XX
 
 ## Checklist
 
-- [ ] Segui a arquitetura descrita em `docs/architecture.md`
-- [ ] `flutter analyze` sem erros
-- [ ] `flutter test` passando
-- [ ] Sem código comentado / prints de debug
-- [ ] Documentação atualizada, se necessário
-
-## Evidências
-
-<!-- Screenshots ou vídeos, quando houver mudança de UI. -->
+- [ ] O código está formatado
+- [ ] `flutter analyze` não apresenta erros
+- [ ] Testei a funcionalidade localmente
+- [ ] Conferi os estados relevantes da tela
+- [ ] Não deixei código temporário ou `print`
