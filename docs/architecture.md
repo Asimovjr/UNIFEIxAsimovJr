@@ -54,7 +54,6 @@ testing/                     # auxiliares de teste (fakes/, models/)
 
 ## Features previstas
 
-`auth`, `home`, `profile`, `appointments`, `settings` — a revisar conforme o escopo do PRG.
 
 ## Observação
 
@@ -63,8 +62,3 @@ são válidas quando tecnicamente justificadas, desde que mantenham a separaçã
 clara de responsabilidades.
 
 ## A definir
-
-- [ ] Gerenciamento de estado confirmado (Riverpod?)
-- [ ] Estratégia de injeção de dependências
-- [ ] Tratamento de erros e Result/Either
-- [ ] Camada de autenticação e backend
