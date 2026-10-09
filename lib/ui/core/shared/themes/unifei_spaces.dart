@@ -46,8 +46,8 @@ abstract class UnifeiRadius {
 
   /// Cards padrão e a barra de navegação.
   ///
-  /// Atenção: a variável `radius/card` do Figma vale 14, mas as telas
-  /// oficiais usam 20 nos cards. Mantivemos o valor das telas.
+  /// A variável `radius/card` do Figma vale 14, mas as telas oficiais usam 20
+  /// nos cards.
   static const double card = 20;
 
   /// Cards em destaque (próxima atividade, avisos).

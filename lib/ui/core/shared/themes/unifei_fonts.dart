@@ -10,11 +10,11 @@ import 'package:google_fonts/google_fonts.dart';
 /// A fonte (Source Sans 3) vem do pacote `google_fonts`. Por isso os estilos
 /// são `final` e não `const`.
 ///
-/// Os estilos não definem cor. Aplique com `copyWith(color: ...)` usando as
-/// cores de `UnifeiColors`.
+/// Os estilos não definem cor. A cor entra com `copyWith(color: ...)`, usando
+/// as cores de `UnifeiColors`.
 abstract class UnifeiFonts {
-  /// Nome da família registrada pelo Google Fonts. Use quando precisar só da
-  /// fonte, sem um estilo pronto (ex.: `ThemeData.fontFamily`).
+  /// Nome da família registrada pelo Google Fonts, para os casos que precisam
+  /// só da fonte, sem um estilo pronto (ex.: `ThemeData.fontFamily`).
   static String get family => GoogleFonts.sourceSans3().fontFamily!;
 
   // Pesos usados no design.
@@ -75,8 +75,9 @@ abstract class UnifeiFonts {
 
   /// "Sobretítulo": texto acima de um título ("PRÓXIMA AVALIAÇÃO").
   ///
-  /// No Figma o texto é exibido em maiúsculas. O `TextStyle` não faz isso,
-  /// então escreva o texto em maiúsculas (ou use `.toUpperCase()`).
+  /// No Figma o texto é exibido em maiúsculas. O `TextStyle` não converte o
+  /// texto, então ele já precisa estar em maiúsculas (ou passar por
+  /// `.toUpperCase()`).
   static final TextStyle overline = GoogleFonts.sourceSans3(
     fontSize: 12,
     height: 1.4,
@@ -86,7 +87,7 @@ abstract class UnifeiFonts {
 
   /// "Etiqueta": metadados curtos em maiúsculas ("MAT002 · TURMA 01", "AGO").
   ///
-  /// Assim como em [overline], escreva o texto em maiúsculas.
+  /// Assim como em [overline], o texto precisa estar em maiúsculas.
   static final TextStyle tag = GoogleFonts.sourceSans3(
     fontSize: 11,
     height: 1.4,
