@@ -1,30 +1,52 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
+import 'package:unifei_mobile/app.dart';
+import 'package:unifei_mobile/ui/core/shared/themes/unifei_colors.dart';
+import 'package:unifei_mobile/ui/core/shared/widgets/unifei_bottom_nav_bar.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_application_1/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  Future<void> pumpApp(WidgetTester tester) async {
+    await tester.pumpWidget(const ProviderScope(child: App()));
+    await tester.pumpAndSettle();
+  }
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  // Cor do rótulo da barra inferior: azul quando o item está ativo.
+  Color navLabelColor(WidgetTester tester, String label) => tester
+      .widget<Text>(
+        find.descendant(
+          of: find.byType(UnifeiBottomNavBar),
+          matching: find.text(label),
+        ),
+      )
+      .style!
+      .color!;
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  testWidgets('abre na aba Início', (tester) async {
+    await pumpApp(tester);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Abrir Cálculo II'), findsOneWidget);
+    expect(navLabelColor(tester, 'Início'), UnifeiColors.primary);
+  });
+
+  testWidgets('tocar numa aba troca a tela e o item ativo', (tester) async {
+    await pumpApp(tester);
+
+    await tester.tap(find.text('Mapa'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Em construção'), findsOneWidget);
+    expect(navLabelColor(tester, 'Mapa'), UnifeiColors.primary);
+    expect(navLabelColor(tester, 'Início'), UnifeiColors.textSecondary);
+  });
+
+  testWidgets('navegar para uma matéria ativa a aba Matérias', (tester) async {
+    await pumpApp(tester);
+
+    await tester.tap(find.text('Abrir Cálculo II'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Matéria calculo-2'), findsOneWidget);
+    expect(navLabelColor(tester, 'Matérias'), UnifeiColors.primary);
   });
 }
