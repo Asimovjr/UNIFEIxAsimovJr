@@ -8,7 +8,7 @@ Explique os passos necessários para validar a implementação.
 
 ## Task
 
-Jira: PRG-XX
+PRG-XX
 
 ## Checklist
 
