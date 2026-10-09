@@ -17,6 +17,9 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
+          # Mesma versão do README. O phosphor_flutter 2.1.0 não compila em
+          # versões mais novas, que tornaram a classe IconData final.
+          flutter-version: 3.41.7
           cache: true
 
       - name: install dependencies

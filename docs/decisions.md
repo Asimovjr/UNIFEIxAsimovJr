@@ -91,6 +91,22 @@ Os ícones do Figma são do Phosphor, estilo Regular, pelo pacote
 `phosphor_flutter` (`PhosphorIconsRegular`). O ícone de Matérias é próprio do
 Figma; o app usa o `bookOpen` no lugar.
 
+## Flutter fixado na 3.41.7
+
+**Data:** 2026-10-09
+
+O projeto e o CI usam o Flutter **3.41.7** (`flutter-version` no
+`.github/workflows/ci.yml`).
+
+**Por quê:** a partir das versões mais novas do Flutter (o CI quebrou na
+3.47.7), a classe `IconData` virou `final`, e o `phosphor_flutter` 2.1.0 (a
+última versão publicada) estende essa classe. Nessas versões, o app não
+compila.
+
+**Para atualizar o Flutter:** antes, é preciso que o `phosphor_flutter` lance
+uma versão compatível, ou trocar a forma de usar os ícones Phosphor (por
+exemplo, SVGs com `flutter_svg`).
+
 ## Galeria de widgets
 
 **Data:** 2026-10-09
