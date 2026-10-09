@@ -33,5 +33,6 @@ prefix: feature/feature-name
 
 ## Documentação
 
-- [Arquitetura](docs/ARCHITECTURE.md)
-- [Guia de desenvolvimento](docs/DEVELOPMENT.md)
+- [Arquitetura](docs/architecture.md)
+- [Guia de desenvolvimento](docs/development.md)
+- [Decisões](docs/decisions.md)
